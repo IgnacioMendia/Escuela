@@ -1,0 +1,67 @@
+﻿@model DataAccess.Model.Nota
+
+@{
+    ViewBag.Title = "Details";
+}
+
+    <header style="background-color:lightgoldenrodyellow !important" class="jumbotron text-center">
+        <h2>Nota</h2>
+    </header>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.alumno.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.alumno.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.materia.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.materia.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NotaPrimerTrimestre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NotaPrimerTrimestre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NotaSegundoTrimestre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NotaSegundoTrimestre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NotaTercerTrimestre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NotaTercerTrimestre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NotaFinal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NotaFinal)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class="btn btn-warning"}) <br />
+    @Html.ActionLink("Back to List", "Index")
+</p>

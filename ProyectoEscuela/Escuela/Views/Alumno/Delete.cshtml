@@ -1,0 +1,60 @@
+﻿@model DataAccess.Model.Alumno
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+    <header style="background-color:lightcoral !important" class="jumbotron jumbotron-fluid text-center">
+        <h2>Eliminar Alumno</h2>
+    </header>
+
+
+
+<div>
+    <h4>Alumno</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.curso.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.curso.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Documento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Documento)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> <br />
+            @Html.ActionLink("Volver atras", "Index", new { @class="btn btn-primary"})
+        </div>
+    }
+</div>

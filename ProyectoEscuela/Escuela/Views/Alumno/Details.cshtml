@@ -1,0 +1,81 @@
+﻿@model DataAccess.Model.Alumno
+
+@{
+    ViewBag.Title = "Details";
+    @ViewBag.Nota
+}
+
+    <header style="background-color:lightgoldenrodyellow !important" class="jumbotron text-center">
+        <h2>Alumno</h2>
+    </header>
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.curso.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.curso.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Documento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Documento)
+        </dd>
+
+    </dl>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Materia</th>
+                <th>Primer trimestre</th>
+                <th>Segundo trimestre</th>
+                <th>Tercer trimestre</th>
+                <th>Final</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewBag.Nota)
+            {
+                <tr>
+                    <td>@item.materia.Nombre</td>
+                    <td>@item.NotaPrimerTrimestre</td>
+                    <td>@item.NotaSegundoTrimestre</td>
+                    <td>@item.NotaTercerTrimestre</td>
+                    <td>@item.NotaFinal</td>
+                </tr>
+            }
+       </tbody>
+     </table>
+
+
+
+
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning" }) <br />
+    @Html.ActionLink("Volver atras", "Index")
+</p>

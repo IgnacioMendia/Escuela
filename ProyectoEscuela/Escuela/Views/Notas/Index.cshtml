@@ -1,0 +1,84 @@
+﻿@model IEnumerable<DataAccess.Model.Nota>
+
+@{
+    ViewBag.Title = "Index";
+}
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#table_id').DataTable();
+        });
+    </script>
+}
+
+
+
+<header style="background-color:moccasin !important" class="jumbotron jumbotron-fluid text-center">
+    <h2>Notas</h2>
+</header>
+
+<p>
+    @Html.ActionLink("Crear nueva", "Create","Notas", new { @class = "btn btn-success" })
+</p>
+
+<table id="table_id" class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.alumno.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.alumno.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.materia.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NotaPrimerTrimestre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NotaSegundoTrimestre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NotaTercerTrimestre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NotaFinal)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.alumno.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.alumno.Apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.materia.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NotaPrimerTrimestre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NotaSegundoTrimestre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NotaTercerTrimestre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NotaFinal)
+                </td>
+                <td class="text-right">
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-warning" }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

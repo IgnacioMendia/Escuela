@@ -1,0 +1,73 @@
+﻿@model DataAccess.Model.Nota
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+    <header style="background-color:lightcoral !important" class="jumbotron jumbotron-fluid text-center">
+        <h2>Eliminar nota</h2>
+    </header>
+
+<div>
+    <h4>Nota</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.alumno.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.alumno.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.materia.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.materia.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NotaPrimerTrimestre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NotaPrimerTrimestre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NotaSegundoTrimestre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NotaSegundoTrimestre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NotaTercerTrimestre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NotaTercerTrimestre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NotaFinal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NotaFinal)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> <br />
+            @Html.ActionLink("Volver atras", "Index")
+        </div>
+    }
+</div>
